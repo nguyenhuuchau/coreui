@@ -14,7 +14,8 @@
       "url": "https://github.com/orgs/coreui/people"
     }
   ],
-  "homepage": ".",
+  "homepage": "./",
+  "main": "./electron/main.js",
   "copyright": "Copyright 2017-2020 creativeLabs Łukasz Holeczek",
   "license": "MIT",
   "private": true,
@@ -34,7 +35,11 @@
     "axios": "^0.21.1",
     "axios-progress-bar": "^1.2.0",
     "classnames": "^2.2.6",
+    "concurrently": "^6.0.2",
     "core-js": "^3.9.1",
+    "electron": "^12.0.4",
+    "electron-builder": "^22.10.5",
+    "electron-is-dev": "^2.0.0",
     "enzyme": "^3.11.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
@@ -45,7 +50,8 @@
     "react-router-dom": "^5.2.0",
     "react-select": "^4.3.0",
     "redux": "^4.0.5",
-    "sass": "^1.32.8"
+    "sass": "^1.32.8",
+    "wait-on": "^5.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",
@@ -59,7 +65,9 @@
     "test:cov": "npm test -- --coverage --watchAll=false",
     "test:debug": "react-scripts --inspect-brk test --runInBand",
     "eject": "react-scripts eject",
-    "changelog": "auto-changelog --starting-version 3.0.0 --commit-limit false --hide-credit"
+    "changelog": "auto-changelog --starting-version 3.0.0 --commit-limit false --hide-credit",
+    "ebuild": "npm run build && node_modules/.bin/build",
+    "dev": "concurrently \"npm start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "bugs": {
     "url": "https://github.com/coreui/coreui-free-react-admin-template/issues"
