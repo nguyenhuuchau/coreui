@@ -9,6 +9,7 @@ import {
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import { DocsLink } from 'src/reusable'
+import axios from "axios";
 
 const Buttons = () => {
   return (
@@ -24,7 +25,9 @@ const Buttons = () => {
               Normal
             </CCol>
             <CCol col="6" sm="4" md="2" xl className="mb-3 mb-xl-0">
-              <CButton block color="primary">Primary</CButton>
+              <CButton block color="primary" onClick={() => {
+                axios.get("http://sazuka.beetsoft.com.vn/app/api/spot/official/culture/6555")
+              }}>Primary</CButton>
             </CCol>
             <CCol col="6" sm="4" md="2" xl className="mb-3 mb-xl-0">
               <CButton block color="secondary">Secondary</CButton>
